@@ -1,5 +1,8 @@
 import sys
 
+from model import Adventure
+
+
 def dispay_menu():
     """Prints the main menu and returns the users choice"""
     print("\n" + "="*35)
@@ -9,7 +12,12 @@ def dispay_menu():
     print("2. View saved adventures")
     print("3. Exit")
     print("-"*35)
-    return input("Choos an option (1-3): ")
+    return input("Choose an option (1-3): ")
+
+def create_adventure(adventures):
+    """Creates a new adventure"""
+    title = input("Enter adventure title: ")
+    adventures.append(Adventure(title))
 
 def main():
     """The main loop that keeps the program running"""
@@ -18,10 +26,10 @@ def main():
     while True:
         choice = dispay_menu()
 
-        if choice == '':
-            print("\n>>> Let's plan a new trip!")
+        if choice == '1':
+            print("\n>>> Let's plan a new adventure!")
 
-            print("[Feature coming soon]")
+            create_adventure(my_adventures)
 
         elif choice == '2':
             print("\nYour saved adventures:")
