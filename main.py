@@ -19,6 +19,13 @@ def create_adventure(adventures):
     title = input("Enter adventure title: ")
     adventures.append(Adventure(title))
 
+def display_adventures(adventures):
+    if not adventures:
+        print("No adventures yet.")
+    else:
+        for adv in adventures:
+            print(adv.title)
+
 def main():
     """The main loop that keeps the program running"""
     my_adventures = []
@@ -34,7 +41,7 @@ def main():
         elif choice == '2':
             print("\nYour saved adventures:")
 
-            print("[Feature coming soon]")
+            display_adventures(my_adventures)
 
         elif choice == '3':
             print("\nPacking up... Safe Travels!")
